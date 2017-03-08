@@ -1,0 +1,29 @@
+{
+  "name": "twitter_bot",
+  "version": "1.0.0",
+  "description": "A simple twitter bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panikdkernel/twitter_bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "node.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panikdkernel/twitter_bot/issues"
+  },
+  "homepage": "https://github.com/panikdkernel/twitter_bot#readme",
+  "dependencies": {
+    "get-json": "0.0.3",
+    "twit": "^2.2.5"
+  }
+}
