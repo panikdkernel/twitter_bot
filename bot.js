@@ -16,7 +16,22 @@ function followed(eventMsg) {
 	var name = eventMsg.source.name;
 	var screenName = eventMsg.source.screen_name;
 	console.log(screenName + " followed you");
-	tweetIt('@' + screenName + ' Thanks for following TWATTER BOT you TWAT! ');
+	tweetIt("@" + screenName + " Thanks for following TWATTER BOT you TWAT! ");
+}
+
+//Anytime someone mentions me in a tweet
+stream.on("tweet",mentioned);
+function mentioned(eventMsg) {
+	var replyto = eventMsg.in_reply_to_screen_name;
+	var text = eventMsg.text;
+	var from = eventMsg.user.screen_name;
+
+	console.log(replyto + " " + from);
+
+	if(replyto === "twatterbotnew") {
+		tweetIt("@" + from + " Thanks for the mention! you TWAT! since my creator is dumb I can only reply with this fixed message");
+	}
+
 }
 
 
@@ -41,7 +56,7 @@ function tweetIt(msg) {
 
 
 tweetRandomJoke();
-setInterval(tweetRandomJoke,1000*60);//tweets every 60 seconds
+setInterval(tweetRandomJoke,1000*60*60);//tweets every 1 hour
 
 //tweeting takes place in this function
 function tweetRandomJoke() {
